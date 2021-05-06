@@ -1,13 +1,10 @@
-def create():
-    from model import db
- 
-
+from app import db
+from model import Users
 
 def data():
-    from model import db, User
     db.create_all()
-    one = User(name='MaxPayne', password='Azerty123')
-    two = User(name='GordonFreeman', password='Qwerty456')
+    one = Users(name='MaxPayne', password='Azerty123')
+    two = Users(name='GordonFreeman', password='Qwerty456')
     db.session.add(one)
     db.session.add(two)
     db.session.commit()
